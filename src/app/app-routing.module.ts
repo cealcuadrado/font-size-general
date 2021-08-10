@@ -12,6 +12,11 @@ const routes: Routes = [
       import('./paragraph/paragraph.module').then((m) => m.ParagraphModule),
   },
   {
+    path: 'switch',
+    loadChildren: () =>
+      import('./switch/switch.module').then((m) => m.SwitchModule),
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',

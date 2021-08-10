@@ -13,7 +13,8 @@ export class HeaderComponent implements OnInit {
 
   public menuItems = [
     { name: 'Home', route: 'home' },
-    { name: "Párrafo", route: 'paragraph'}
+    { name: 'Párrafo', route: 'paragraph' },
+    { name: 'Switch', route: 'switch'}
   ];
 
   public buttons = ['btn-sm', 'btn-md', 'btn-lg'];
