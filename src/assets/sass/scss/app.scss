@@ -1,6 +1,39 @@
 @use "sass:map";
+// @import './../../../../node_modules/ngx-ui-switch/ui-switch.component.scss';
 
-@mixin nivel-tamannio($base-size, $h1-size, $h2-size) {
+@mixin size-switch($knob-size, $min-width, $span-size, $min-padding, $max-padding) {
+  .switch {
+    min-width: $min-width !important;
+    height: $knob-size !important;
+    border-radius: $knob-size !important;
+
+    & > .switch-pane {
+      & > span {
+        font-size: $default-size;
+        line-height: $default-size;
+      }
+
+      &.switch-label-checked {
+        padding-right: $max-padding;
+        padding-left: $min-padding;
+      }
+
+      &.switch-label-unchecked {
+        padding-left: $max-padding;
+        padding-right: $min-padding;
+      }
+    }
+
+    small {
+      width: $default-size !important;
+      height: $default-size !important;
+      right: calc(100% - #{$default-size}) !important;
+    }
+  }
+}
+
+
+@mixin nivel-tamannio($base-size, $h1-size, $h2-size, $switch-size) {
   font-size: $base-size !important;
   h1 { font-size: $h1-size !important; }
   h2 { font-size: $h2-size !important; }
@@ -20,12 +53,22 @@
       font-size: inherit !important;
     }
   }
+
+  /*
+  @if ($switch-size == 'small') {
+    @include size-switch(20px, 33px, 9px, 10px, 25px);
+  } @else if ($switch-size == 'medium') {
+    @include size-switch(30px, 50px, 16px, 10px, 35px);
+  } @else if ($switch-size == 'large') {
+    @include size-switch(40px, 60px, 16px, 20px, 45px);
+  }
+  */
 }
 
 $niveles-tamannio: (
-  (h1: 1.25rem, h2: 1.125rem, base: 1rem),
-  (h1: 1.7rem, h2: 1.4rem, base: 1.2rem),
-  (h1: 2rem, h2: 1.75rem, base: 1.5rem)
+  (h1: 1.25rem, h2: 1.125rem, base: 1rem, switch: 'small'),
+  (h1: 1.7rem, h2: 1.4rem, base: 1.2rem, switch: 'medium'),
+  (h1: 2rem, h2: 1.75rem, base: 1.5rem, switch: 'large')
 );
 
 @each $nivel in $niveles-tamannio {
@@ -33,8 +76,9 @@ $niveles-tamannio: (
   $h1: map-get($nivel, h1);
   $h2: map-get($nivel, h2);
   $base: map-get($nivel, base);
+  $switch: map-get($nivel, switch);
 
   .nivel-tamannio-#{$index} {
-    @include nivel-tamannio($base, $h1, $h2);
+    @include nivel-tamannio($base, $h1, $h2, $switch);
   }
 }
