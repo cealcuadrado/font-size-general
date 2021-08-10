@@ -1,37 +1,4 @@
 @use "sass:map";
-// @import './../../../../node_modules/ngx-ui-switch/ui-switch.component.scss';
-
-@mixin size-switch($knob-size, $min-width, $span-size, $min-padding, $max-padding) {
-  .switch {
-    min-width: $min-width !important;
-    height: $knob-size !important;
-    border-radius: $knob-size !important;
-
-    & > .switch-pane {
-      & > span {
-        font-size: $default-size;
-        line-height: $default-size;
-      }
-
-      &.switch-label-checked {
-        padding-right: $max-padding;
-        padding-left: $min-padding;
-      }
-
-      &.switch-label-unchecked {
-        padding-left: $max-padding;
-        padding-right: $min-padding;
-      }
-    }
-
-    small {
-      width: $default-size !important;
-      height: $default-size !important;
-      right: calc(100% - #{$default-size}) !important;
-    }
-  }
-}
-
 
 @mixin nivel-tamannio($base-size, $h1-size, $h2-size, $switch-size) {
   font-size: $base-size !important;
@@ -53,16 +20,6 @@
       font-size: inherit !important;
     }
   }
-
-  /*
-  @if ($switch-size == 'small') {
-    @include size-switch(20px, 33px, 9px, 10px, 25px);
-  } @else if ($switch-size == 'medium') {
-    @include size-switch(30px, 50px, 16px, 10px, 35px);
-  } @else if ($switch-size == 'large') {
-    @include size-switch(40px, 60px, 16px, 20px, 45px);
-  }
-  */
 }
 
 $niveles-tamannio: (
