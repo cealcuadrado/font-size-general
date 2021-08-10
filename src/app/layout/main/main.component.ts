@@ -1,3 +1,4 @@
+import { HeaderService } from './../header/header.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  public nivelTamannio: number;
+
+  constructor(
+    private header: HeaderService
+  ) { }
 
   ngOnInit(): void {
+    this.header.obtenerNivelTamannio().subscribe(nivelTamannio => {
+      this.nivelTamannio = nivelTamannio;
+    });
   }
 
+  public setearTamannio(): string {
+    return `nivel-tamannio-${this.nivelTamannio}`;
+  }
 }

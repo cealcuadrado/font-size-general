@@ -3,9 +3,14 @@
     <a class="navbar-brand text-uppercase text-body ms-2" href="#">
       Niveles de tamaños
     </a>
-    <button class="btn btn-collapse border" type="button" (click)="changeCollapse()">
-      <i class="fa fa-bars fa-fw"></i>
-    </button>
+    <span>
+      <button class="btn btn-change-text-size border" [ngbPopover]="popContent" [popoverTitle]="popTitle">
+        <i class="fa fa-font fa-fw"></i>
+      </button>
+      <button class="btn btn-collapse border" type="button" (click)="changeCollapse()">
+        <i class="fa fa-bars text-primary fa-fw"></i>
+      </button>
+    </span>
   </div>
 
   <nav class="navbar navbar-expand-lg">
@@ -25,4 +30,14 @@
     </div>
   </nav>
 </header>
+
+<ng-template #popTitle>
+  Tamaño del texto
+</ng-template>
+<ng-template #popContent>
+  <button *ngFor="let button of buttons; let indexOfButton = index" class="btn btn-primary {{button}}"
+          [ngClass]="{'active':isActive(indexOfButton+1), 'me-1':indexOfButton+1 != buttons.length}" (click)="cambiarNivelTamannio(indexOfButton+1)">
+    <i class="fa fa-font fa-fw"></i>
+  </button>
+</ng-template>
 

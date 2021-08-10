@@ -1,3 +1,4 @@
+import { HeaderService } from './header.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public nivelTamannio: number;
   public isMenuCollapsed = false;
 
   public menuItems = [
@@ -14,13 +16,27 @@ export class HeaderComponent implements OnInit {
     { name: "Párrafo", route: 'paragraph'}
   ];
 
-  constructor() { }
+  public buttons = ['btn-sm', 'btn-md', 'btn-lg'];
+
+  constructor(
+    private header:HeaderService
+  ) { }
 
   ngOnInit(): void {
+    this.header.obtenerNivelTamannio().subscribe(nivelTamannio => {
+      this.nivelTamannio = nivelTamannio;
+    });
   }
 
   public changeCollapse(): void {
     this.isMenuCollapsed = !this.isMenuCollapsed;
   }
 
+  public isActive(nivel: number): boolean {
+    return this.nivelTamannio == nivel;
+  }
+
+  public cambiarNivelTamannio(nivel: number): void {
+    this.header.setearNivelTamannio(nivel);
+  }
 }

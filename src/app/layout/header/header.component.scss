@@ -1,6 +1,26 @@
 header {
   padding-top: 1rem;
-  
+
+  .btn-change-text-size {
+    @media screen and (max-width: 991px) {
+      margin-right: 1rem;
+    }
+  }
+
+  .navbar-nav {
+    font-size: 0.75rem;
+
+    .nav-item {
+      .nav-link {
+        color: black;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: 991px) {
     position: fixed;
     top: 0;
@@ -16,20 +36,6 @@ header {
 
     .btn-collapse {
       display: none;
-    }
-  }
-
-  .navbar-nav {
-    font-size: 0.75rem;
-
-    .nav-item {
-      .nav-link {
-        color: black;
-
-        &.active {
-          font-weight: bold;
-        }
-      }
     }
   }
 }
