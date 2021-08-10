@@ -1,0 +1,13 @@
+header {
+  @media screen and (max-width: 991px) {
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 992px) {
+    position: sticky;
+    top: 1rem;
+  }
+}
