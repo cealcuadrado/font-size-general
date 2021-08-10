@@ -3,11 +3,32 @@ header {
     position: fixed;
     top: 0;
     border-bottom: 1px solid black;
-    width: 100%;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: white;
   }
 
   @media screen and (min-width: 992px) {
     position: sticky;
     top: 1rem;
+
+    .btn-collapse {
+      display: none;
+    }
+  }
+
+  .navbar-nav {
+    font-size: 0.75rem;
+
+    .nav-item {
+      .nav-link {
+        color: black;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
   }
 }

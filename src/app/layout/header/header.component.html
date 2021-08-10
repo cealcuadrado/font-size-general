@@ -1,4 +1,28 @@
-<header>
-  <p>header works!</p>
+<header class="w-100">
+  <div class="d-flex justify-content-between align-items-center">
+    <a class="navbar-brand text-uppercase text-body ms-2" href="#">
+      Niveles de tamaños
+    </a>
+    <button class="btn btn-collapse border" type="button" (click)="changeCollapse()">
+      <i class="fa fa-bars fa-fw"></i>
+    </button>
+  </div>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="d-flex flex-column w-100">
+            <li class="nav-item" *ngFor="let item of menuItems">
+              <a class="nav-link" href="#" [routerLink]="[item.route]" routerLinkActive="active">
+                {{item.name}}
+              </a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
 
