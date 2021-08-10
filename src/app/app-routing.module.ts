@@ -12,6 +12,11 @@ const routes: Routes = [
       import('./paragraph/paragraph.module').then((m) => m.ParagraphModule),
   },
   {
+    path: 'buttons',
+    loadChildren: () =>
+      import('./buttons/buttons.module').then((m) => m.ButtonsModule),
+  },
+  {
     path: 'switch',
     loadChildren: () =>
       import('./switch/switch.module').then((m) => m.SwitchModule),
