@@ -17,6 +17,11 @@ const routes: Routes = [
       import('./switch/switch.module').then((m) => m.SwitchModule),
   },
   {
+    path: 'accordion',
+    loadChildren: () =>
+      import('./accordion/accordion.module').then((m) => m.AccordionModule),
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
