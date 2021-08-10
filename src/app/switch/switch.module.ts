@@ -14,7 +14,6 @@ import { UiSwitchModule } from 'ngx-ui-switch';
     CommonModule,
     SwitchRoutingModule,
     UiSwitchModule.forRoot({
-      size: 'large',
       checkedLabel: 'Si',
       uncheckedLabel: 'No',
       checkedTextColor: '#ffffff',
