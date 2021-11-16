@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit {
     { name: 'Home', route: 'home' },
     { name: 'Párrafo', route: 'paragraph' },
     { name: 'Switch', route: 'switch' },
-    { name: 'Acordeón', route: 'accordion'},
+    { name: 'Acordeón', route: 'accordion' },
+    { name: 'Barra de progreso', route: 'progress-bar'}
   ];
 
   public buttons = ['btn-sm', 'btn-md', 'btn-lg'];
