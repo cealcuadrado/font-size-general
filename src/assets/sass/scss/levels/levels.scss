@@ -1,6 +1,6 @@
 @use "sass:map";
 
-@mixin nivel-tamannio($base-size, $h1-size, $h2-size, $switch-size) {
+@mixin nivel-tamannio($base-size, $h1-size, $h2-size, $height-size, $switch-size) {
   font-size: $base-size !important;
   h1 { font-size: $h1-size !important; }
   h2 { font-size: $h2-size !important; }
@@ -20,6 +20,15 @@
       font-size: inherit !important;
     }
   }
+
+  /* Barra de progreso */
+  ngb-progressbar {
+    font-size: $base-size !important;
+
+    &.progress {
+      height: $h1-size !important;
+    }
+  }
 }
 
 $niveles-tamannio: (
@@ -33,9 +42,10 @@ $niveles-tamannio: (
   $h1: map-get($nivel, h1);
   $h2: map-get($nivel, h2);
   $base: map-get($nivel, base);
+  $height: map-get($nivel, height);
   $switch: map-get($nivel, switch);
 
   .nivel-tamannio-#{$index} {
-    @include nivel-tamannio($base, $h1, $h2, $switch);
+    @include nivel-tamannio($base, $h1, $h2, $height, $switch);
   }
 }
