@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
     { name: 'Párrafo', route: 'paragraph' },
     { name: 'Switch', route: 'switch' },
     { name: 'Acordeón', route: 'accordion' },
-    { name: 'Barra de progreso', route: 'progress-bar'}
+    { name: 'Barra de progreso', route: 'progress-bar' },
+    { name: 'Tarjeta personalizada', route: 'customized-card'}
   ];
 
   public buttons = ['btn-sm', 'btn-md', 'btn-lg'];

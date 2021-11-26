@@ -1,0 +1,18 @@
+.card {
+  .card-header {
+    background-color: cadetblue;
+    height: 75px;
+
+    .card-title {
+      color: white;
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+
+    .menu-card {
+      position: absolute;
+      top: .45rem;
+      right: 20px;
+    }
+  }
+}

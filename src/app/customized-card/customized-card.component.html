@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-12 col-lg-4" *ngFor="let card of cards">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title text-uppercase font-weight-bold text-center">
+          {{card.title}}
+        </h3>
+        <div class="menu-card">
+          <small class="bg-dark text-white font-weight-bold p-1 rounded">
+            {{card.code}}
+          </small>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>{{card.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>

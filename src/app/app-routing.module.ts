@@ -27,6 +27,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'progress-bar', loadChildren: () => import('./progress-bar/progress-bar.module').then(m => m.ProgressBarModule) },
+  { path: 'customized-card', loadChildren: () => import('./customized-card/customized-card.module').then(m => m.CustomizedCardModule) },
 ];
 
 @NgModule({
